@@ -1,10 +1,13 @@
 import * as React from "react";
 import type { HeadFC } from "gatsby";
 
+// Components
+import { Search } from "@components";
+
 const Home = () => {
   return (
     <main>
-      <h1>Congratulations</h1>
+      <Search />
     </main>
   );
 };
