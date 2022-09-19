@@ -10,9 +10,7 @@ type SearchData = {
 
 const Search = () => {
   const { handleSubmit, register } = useForm<SearchData>();
-  const props = useContext(Searching.Context);
-
-  console.log(props);
+  const {setSearching} = useContext(Searching.Context);
 
   const onSubmit: SubmitHandler<SearchData> = async (data: SearchData) => {
     const { name } = data;
@@ -22,7 +20,7 @@ const Search = () => {
       .then((response) => response.json())
       .then((parsedResponse) => parsedResponse);
 
-    console.log(users);
+    users && setSearching(users)
   };
 
   return (

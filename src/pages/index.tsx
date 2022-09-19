@@ -2,12 +2,13 @@ import * as React from "react";
 import type { HeadFC } from "gatsby";
 
 // Components
-import { Search } from "src/components";
+import { Search, Result } from "src/components";
 
 const Home = () => {
   return (
-    <main>
+    <main className="main">
       <Search />
+      <Result />
     </main>
   );
 };
