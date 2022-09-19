@@ -22,11 +22,11 @@ interface UsersContext {
   url: string;
 }
 
-interface SearchingContext {
+type SearchingContext = {
   items: UsersContext[] | [];
   currentPage: number;
   setSearching: Function;
-}
+};
 
 const initialState: SearchingContext = {
   items: [],
