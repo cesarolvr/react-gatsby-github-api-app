@@ -7,9 +7,10 @@ import { Searching } from "src/contexts";
 import { If } from "src/components";
 
 const Result = () => {
-  const { items, ...props } = useContext(Searching.Context);
+  const searching = useContext(Searching.Context);
+  const { items } = searching;
 
-  console.log(props);
+  console.log("searching", searching);
 
   return (
     <div>

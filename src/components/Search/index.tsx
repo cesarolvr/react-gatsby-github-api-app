@@ -9,8 +9,14 @@ type SearchData = {
 };
 
 const Search = () => {
-  const { handleSubmit, register } = useForm<SearchData>();
-  const {setSearching} = useContext(Searching.Context);
+  const { handleSubmit, register, formState } = useForm<SearchData>({
+    mode: "onChange",
+    defaultValues: {
+      name: "",
+    },
+  });
+
+  const { setSearching } = useContext(Searching.Context);
 
   const onSubmit: SubmitHandler<SearchData> = async (data: SearchData) => {
     const { name } = data;
@@ -20,15 +26,24 @@ const Search = () => {
       .then((response) => response.json())
       .then((parsedResponse) => parsedResponse);
 
-    users && setSearching(users)
+    users && setSearching(users);
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label>
-        <input {...register("name")} />
+        <input
+          {...register("name", {
+            required: true,
+            minLength: 1,
+          })}
+          placeholder="Pesquisar um usuário"
+          type="text"
+        />
       </label>
-      <button type="submit">Submit</button>
+      <button type="submit" disabled={!formState.isValid}>
+        Submit
+      </button>
     </form>
   );
 };
