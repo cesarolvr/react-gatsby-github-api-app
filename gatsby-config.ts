@@ -4,9 +4,7 @@ const importAliasConfig = {
   resolve: `gatsby-plugin-alias-imports`,
   options: {
     alias: {
-      "@src": "src",
-      "@components": "src/components",
-      "@pages": "src/pages",
+      "src": "src/",
     },
     extensions: ["ts", "tsx"],
   },

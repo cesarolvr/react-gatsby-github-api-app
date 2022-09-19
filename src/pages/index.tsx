@@ -2,7 +2,7 @@ import * as React from "react";
 import type { HeadFC } from "gatsby";
 
 // Components
-import { Search } from "@components";
+import { Search } from "src/components";
 
 const Home = () => {
   return (

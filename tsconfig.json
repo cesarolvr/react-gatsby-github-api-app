@@ -3,17 +3,19 @@
     "./src/**/*",
     "./gatsby-node.ts",
     "./gatsby-config.ts",
-    "./plugins/**/*"
+    "./plugins/**/*",
+    "gatsby-types.d.ts"
   ],
   "compilerOptions": {
     "target": "esnext",
     "lib": ["dom", "esnext"],
     "jsx": "react",
     "module": "esnext",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "moduleResolution": "node",
     "paths": {
-      "@components": ["components"]
+      "components": ["src/components"],
+      "contexts": ["src/contexts"]
     },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
