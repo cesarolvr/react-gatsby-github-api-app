@@ -19,11 +19,9 @@ const Result = () => {
         renderIf={
           <>
             <ul>
-              {items &&
-                items.length > 0 &&
-                items.map(({ login, id }) => {
-                  return <li key={id}>{login}</li>;
-                })}
+              {items.map(({ login, id }) => {
+                return <li key={id}>{login}</li>;
+              })}
             </ul>
             <Pagination />
           </>

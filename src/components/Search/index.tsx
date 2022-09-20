@@ -19,13 +19,13 @@ const Search = () => {
     },
   });
 
-  const { setSearching } = useContext(Searching.Context);
+  const { setSearching, ...props } = useContext(Searching.Context);
 
   const onSubmit: SubmitHandler<SearchData> = async (data: SearchData) => {
     const { name } = data;
 
-    const usersFound = await services.getUsers({ name });
-    usersFound && setSearching(usersFound);
+    const newSearching = await services.getUsers({ name });
+    newSearching && setSearching(newSearching);
   };
 
   return (

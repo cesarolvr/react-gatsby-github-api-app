@@ -5,6 +5,7 @@ import { Searching } from "src/contexts";
 
 const Pagination = () => {
   const searching = useContext(Searching.Context);
+  const { currentPage, total_count } = searching
 
   console.log("searching", searching);
 
@@ -12,7 +13,7 @@ const Pagination = () => {
 
   return (
     <div>
-      <button>voltar</button>
+      <button disabled={currentPage < 2}>voltar</button>
       <select name="page">
         {totalPages.map((current) => {
           const item = current + 1;
@@ -23,7 +24,7 @@ const Pagination = () => {
           );
         })}
       </select>
-      <button>próximo</button>
+      <button disabled={currentPage === total_count}>próximo</button>
     </div>
   );
 };

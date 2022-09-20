@@ -25,6 +25,7 @@ interface UsersContext {
 type SearchingContext = {
   items: UsersContext[] | [];
   currentPage: number;
+  total_count: number | null;
   setSearching: Function;
   documentation_url?: string;
   message?: string;
@@ -33,13 +34,18 @@ type SearchingContext = {
 const initialState: SearchingContext = {
   items: [],
   currentPage: 1,
+  total_count: null,
   setSearching: () => null,
 };
 
 const Context = React.createContext<SearchingContext>(initialState);
 
 const Provider = ({ children }: React.PropsWithChildren) => {
-  const [searching, setSearching] = useState(initialState);
+  const [searching, set] = useState(initialState);
+
+  const setSearching = (newSearching: object) => {
+    set({ ...searching, ...newSearching });
+  };
 
   return (
     <Context.Provider value={{ ...searching, setSearching }}>
