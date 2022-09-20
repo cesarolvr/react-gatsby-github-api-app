@@ -1,11 +1,13 @@
 import React from "react";
 
-interface IfProps extends React.PropsWithChildren {
+interface IfProps {
   condition: boolean;
+  renderIf: React.ReactElement;
+  renderElse?: React.ReactElement;
 }
 
-const If = ({ children, condition }: IfProps): JSX.Element | null => {
-  return <>{condition ? children : null}</>;
+const If = ({ condition, renderIf, renderElse }: IfProps): JSX.Element => {
+  return <>{condition ? renderIf : renderElse}</>;
 };
 
 export default If;

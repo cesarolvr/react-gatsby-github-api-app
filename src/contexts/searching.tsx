@@ -26,6 +26,8 @@ type SearchingContext = {
   items: UsersContext[] | [];
   currentPage: number;
   setSearching: Function;
+  documentation_url?: string;
+  message?: string;
 };
 
 const initialState: SearchingContext = {

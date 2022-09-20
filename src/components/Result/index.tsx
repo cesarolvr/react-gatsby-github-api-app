@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { Searching } from "src/contexts";
 
 // Components
-import { If } from "src/components";
+import { If, Pagination } from "src/components";
 
 const Result = () => {
   const searching = useContext(Searching.Context);
@@ -14,13 +14,21 @@ const Result = () => {
 
   return (
     <div>
-      <If condition={items && items.length > 0}>
-        <ul>
-          {items.map(({ login, id }) => {
-            return <li key={id}>{login}</li>;
-          })}
-        </ul>
-      </If>
+      <If
+        condition={items && items.length > 0}
+        renderIf={
+          <>
+            <ul>
+              {items &&
+                items.length > 0 &&
+                items.map(({ login, id }) => {
+                  return <li key={id}>{login}</li>;
+                })}
+            </ul>
+            <Pagination />
+          </>
+        }
+      />
     </div>
   );
 };
