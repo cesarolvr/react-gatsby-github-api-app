@@ -9,6 +9,7 @@ import services from "src/services";
 
 type SearchData = {
   name: string;
+  currentPage: number;
 };
 
 const Search = () => {
@@ -19,13 +20,13 @@ const Search = () => {
     },
   });
 
-  const { setSearching, ...props } = useContext(Searching.Context);
+  const { setSearching, currentPage } = useContext(Searching.Context);
 
   const onSubmit: SubmitHandler<SearchData> = async (data: SearchData) => {
     const { name } = data;
 
-    const newSearching = await services.getUsers({ name });
-    newSearching && setSearching(newSearching);
+    const newSearching = await services.getUsers({ name, currentPage });
+    newSearching && setSearching({ ...newSearching });
   };
 
   return (

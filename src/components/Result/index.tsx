@@ -8,9 +8,7 @@ import { If, Pagination } from "src/components";
 
 const Result = () => {
   const searching = useContext(Searching.Context);
-  const { items } = searching;
-
-  console.log("searching", searching);
+  const { items, dirty } = searching;
 
   return (
     <div>
@@ -27,6 +25,7 @@ const Result = () => {
           </>
         }
       />
+      <If condition={items && items.length === 0 && dirty} renderIf={<>Nada encontrado</>} />
     </div>
   );
 };

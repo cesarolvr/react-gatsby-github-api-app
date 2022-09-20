@@ -29,6 +29,7 @@ type SearchingContext = {
   setSearching: Function;
   documentation_url?: string;
   message?: string;
+  dirty: boolean;
 };
 
 const initialState: SearchingContext = {
@@ -36,6 +37,7 @@ const initialState: SearchingContext = {
   currentPage: 1,
   total_count: null,
   setSearching: () => null,
+  dirty: false,
 };
 
 const Context = React.createContext<SearchingContext>(initialState);
@@ -44,7 +46,7 @@ const Provider = ({ children }: React.PropsWithChildren) => {
   const [searching, set] = useState(initialState);
 
   const setSearching = (newSearching: object) => {
-    set({ ...searching, ...newSearching });
+    set({ ...searching, ...newSearching, dirty: true });
   };
 
   return (
