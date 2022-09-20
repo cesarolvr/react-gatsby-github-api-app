@@ -23,8 +23,9 @@ interface UsersContext {
 }
 
 type SearchingContext = {
+  name: string;
   items: UsersContext[] | [];
-  currentPage: number;
+  page: number;
   total_count: number | null;
   setSearching: Function;
   documentation_url?: string;
@@ -33,8 +34,9 @@ type SearchingContext = {
 };
 
 const initialState: SearchingContext = {
+  name: "",
   items: [],
-  currentPage: 1,
+  page: 1,
   total_count: null,
   setSearching: () => null,
   dirty: false,

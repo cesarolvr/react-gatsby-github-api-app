@@ -5,7 +5,7 @@ import { getQueryStringFromObject } from "src/utils";
 
 type getUsersFilterType = {
   name: string;
-  currentPage: number;
+  page: number;
 };
 
 type githubFilterType = {
@@ -17,11 +17,11 @@ type githubFilterType = {
 };
 
 const getUsers = async (filters: getUsersFilterType): Promise<object> => {
-  const { name, currentPage } = filters;
+  const { name, page } = filters;
 
   const filterToGithubAPI: githubFilterType = {
     q: `${name} in:login`,
-    page: currentPage,
+    page,
     per_page: 9,
     sort: "",
     order: "desc",
