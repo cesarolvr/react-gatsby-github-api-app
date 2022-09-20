@@ -8,24 +8,35 @@ import { If, Pagination } from "src/components";
 
 const Result = () => {
   const searching = useContext(Searching.Context);
-  const { items, dirty } = searching;
+  const { items, dirty, loading, name } = searching;
 
   return (
     <div>
       <If
-        condition={items && items.length > 0}
-        renderIf={
+        condition={loading}
+        renderIf={<>Loading</>}
+        renderElse={
           <>
-            <ul>
-              {items.map(({ login, id }) => {
-                return <li key={id}>{login}</li>;
-              })}
-            </ul>
-            <Pagination />
+            <If
+              condition={items && items.length > 0}
+              renderIf={
+                <>
+                  <ul>
+                    {items.map(({ login, id }) => {
+                      return <li key={id}>{login}</li>;
+                    })}
+                  </ul>
+                  <Pagination />
+                </>
+              }
+            />
+            <If
+              condition={items && items.length === 0 && dirty}
+              renderIf={<>Your search - {name} - did not match any user.</>}
+            />
           </>
         }
       />
-      <If condition={items && items.length === 0 && dirty} renderIf={<>Nada encontrado</>} />
     </div>
   );
 };

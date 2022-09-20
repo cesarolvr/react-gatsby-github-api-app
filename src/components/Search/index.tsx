@@ -25,8 +25,9 @@ const Search = () => {
   const onSubmit: SubmitHandler<SearchData> = async (data: SearchData) => {
     const { name } = data;
 
+    setSearching({ loading: true });
     const newSearching = await services.getUsers({ name, page });
-    newSearching && setSearching({ name, ...newSearching });
+    newSearching && setSearching({ name, loading: false, dirty: true, ...newSearching });
   };
 
   return (
