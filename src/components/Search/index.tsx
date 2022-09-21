@@ -68,8 +68,6 @@ const Search = () => {
     });
   }
 
-  console.log('items', items)
-
   const changeSort = (): void => {
   
     const sorteredItems: object = services.sortUsers({

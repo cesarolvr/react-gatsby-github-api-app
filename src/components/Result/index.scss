@@ -1,3 +1,17 @@
+.results-info {
+  margin: 0 auto 25px auto;
+  text-align: left;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    background-color: #300287;
+    padding: 0 5px;
+  }
+}
+
 .results-list {
   width: 400px;
   max-width: 90vw;
@@ -44,5 +58,15 @@
         padding-left: 5px;
       }
     }
+  }
+}
+
+.feedback {
+  color: white;
+  padding: 50px;
+
+  strong {
+    background-color: #300287;
+    padding: 0 5px;
   }
 }

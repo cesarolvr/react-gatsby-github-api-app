@@ -11,19 +11,27 @@ import "./index.scss";
 
 const Result = () => {
   const searching = useContext(Searching.Context);
-  const { items, dirty, loading, name } = searching;
+  const { items, dirty, loading, name, total_count, page } = searching;
 
   return (
     <div className="results">
       <If
         condition={loading}
-        renderIf={<>Loading</>}
+        renderIf={<div className="feedback">⌛ loading...</div>}
         renderElse={
           <>
             <If
               condition={items && items.length > 0}
               renderIf={
                 <>
+                  <div className="results-info">
+                    <div className="holder">
+                      <span>{total_count}</span> users found
+                    </div>
+                    <div className="holder">
+                      page <span>{page}</span>
+                    </div>
+                  </div>
                   <ul className="results-list">
                     <li className="results-list__item results-list__item-header">
                       <div className="results-list__item-cell">📷</div>
@@ -42,7 +50,9 @@ const Result = () => {
                             />
                           </div>
                           <div className="results-list__item-cell">{login}</div>
-                          <div className="results-list__item-cell">{type.toLowerCase()}</div>
+                          <div className="results-list__item-cell">
+                            {type.toLowerCase()}
+                          </div>
                         </li>
                       );
                     })}
@@ -53,7 +63,11 @@ const Result = () => {
             />
             <If
               condition={items && items.length === 0 && dirty}
-              renderIf={<>Your search - {name} - did not match any user.</>}
+              renderIf={
+                <div className="feedback">
+                  your search <strong>{name}</strong> did not match any user 😔
+                </div>
+              }
             />
           </>
         }
