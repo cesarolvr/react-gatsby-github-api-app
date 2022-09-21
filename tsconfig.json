@@ -3,7 +3,7 @@
     "./src/**/*",
     "./gatsby-node.ts",
     "./gatsby-config.ts",
-    "./src/tests/*"
+    "./src/tests/*",
     "./plugins/**/*",
     "gatsby-types.d.ts",
   ],
