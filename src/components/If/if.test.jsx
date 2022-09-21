@@ -1,10 +1,10 @@
-import renderer from "react-test-renderer";
+import { screen, render } from "@testing-library/react";
 
 // Component
 import If from "./index";
 
-it("render true component", () => {
-  const component = renderer.create(
+test("it should renders true", () => {
+  render(
     <If
       condition={true}
       renderIf={<>True condition</>}
@@ -12,12 +12,11 @@ it("render true component", () => {
     />,
   );
 
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(screen.getByText(/True condition/i)).toBeInTheDocument();
 });
 
-it("render falsy component", () => {
-  const component = renderer.create(
+test("it should renders false", () => {
+  render(
     <If
       condition={false}
       renderIf={<>True condition</>}
@@ -25,6 +24,5 @@ it("render falsy component", () => {
     />,
   );
 
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+  expect(screen.getByText(/Falsy condition/i)).toBeInTheDocument();
 });
