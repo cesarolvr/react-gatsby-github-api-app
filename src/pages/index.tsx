@@ -13,6 +13,9 @@ const Home = () => {
       <h1 className="title">🐙 GitHub users ⭐</h1>
       <Search />
       <Result />
+      <footer className="footer">
+        <p>by cesarolvr 👨🏿‍🦲</p>
+      </footer>
     </main>
   );
 };
