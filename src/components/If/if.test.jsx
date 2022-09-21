@@ -1,7 +1,7 @@
 import renderer from "react-test-renderer";
 
 // Component
-import If from "../src/components/If/index";
+import If from "./index";
 
 it("render true component", () => {
   const component = renderer.create(

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, SyntheticEvent, useContext } from "react";
+import React, { ChangeEvent, useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 // Contexts

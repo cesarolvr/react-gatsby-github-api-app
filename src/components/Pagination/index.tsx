@@ -19,6 +19,7 @@ const Pagination = () => {
       name,
       page: newPage,
     });
+    
     setSearching({
       page: newPage,
       loading: false,
