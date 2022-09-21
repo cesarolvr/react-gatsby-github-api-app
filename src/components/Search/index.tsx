@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { ChangeEvent, SyntheticEvent, useContext } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 // Contexts
@@ -51,14 +51,32 @@ const Search = () => {
       });
   };
 
+  const changeSortBy = (e: ChangeEvent): void => {
+    e.preventDefault()
+    const target = e.target as HTMLInputElement
+    
+    const sorteredItems: object = services.sortUsers({
+      items,
+      sortDirection: !sortDirection,
+      sortBy: target.value,
+    });
+
+    setSearching({
+      items: sorteredItems,
+      sortDirection: !sortDirection,
+      sortBy: target.value,
+    });
+  }
+
+  console.log('items', items)
+
   const changeSort = (): void => {
+  
     const sorteredItems: object = services.sortUsers({
       items,
       sortDirection: !sortDirection,
       sortBy,
     });
-
-    console.log(sorteredItems);
 
     setSearching({
       items: sorteredItems,
@@ -86,10 +104,10 @@ const Search = () => {
         <select
           className="select"
           disabled={!(items.length > 0)}
-          {...register("sortBy")}
+          onChange={changeSortBy}
         >
-          <option value="female">login</option>
-          <option value="male">male</option>
+          <option value="login">login</option>
+          <option value="type">type</option>
         </select>
         <button
           className="button"

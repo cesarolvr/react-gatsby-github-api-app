@@ -64,7 +64,6 @@ const sortUsers = ({ items, sortDirection, sortBy }: sortUsersType) => {
       return next[sortBy].localeCompare(valueToCheck);
     }
   });
-  // console.log("sorteredItems", sorteredItems);
 
   return sorteredItems;
 };
