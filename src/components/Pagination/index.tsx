@@ -34,14 +34,14 @@ const Pagination = () => {
         disabled={page < 2}
         onClick={() => navigate(page - 1)}
       >
-        voltar
+        prev
       </button>
       <button
         className="button"
         onClick={() => navigate(page + 1)}
         disabled={page === total_count}
       >
-        próximo
+        next
       </button>
     </div>
   );
