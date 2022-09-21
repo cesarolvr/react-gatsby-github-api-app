@@ -43,7 +43,7 @@ const getUsers = async (filters: getUsersFilterType): Promise<object> => {
 
   if (users.status !== 200) {
     toast.error(parsedResponse.message, {
-      position: "top-center",
+      position: "bottom-center",
       autoClose: false,
       hideProgressBar: true,
       closeOnClick: true,

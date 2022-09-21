@@ -46,7 +46,7 @@ const Result = () => {
                             <img
                               src={avatar_url}
                               alt=""
-                              style={{ width: "40px", borderRadius: "50%" }}
+                              className="results-list__item-cell-thumb"
                             />
                           </div>
                           <div className="results-list__item-cell">{login}</div>
