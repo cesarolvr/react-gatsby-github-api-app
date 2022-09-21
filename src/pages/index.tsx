@@ -14,7 +14,9 @@ const Home = () => {
       <Search />
       <Result />
       <footer className="footer">
-        <p>by cesarolvr 👨🏿‍🦲</p>
+        <a href="https://github.com/cesarolvr/cesar-oliveira-web">
+          🔗 source code here 🔗
+        </a>
       </footer>
     </main>
   );

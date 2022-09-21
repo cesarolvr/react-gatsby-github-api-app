@@ -57,13 +57,13 @@ const Search = () => {
     
     const sorteredItems: object = services.sortUsers({
       items,
-      sortDirection: !sortDirection,
+      sortDirection: sortDirection,
       sortBy: target.value,
     });
 
     setSearching({
       items: sorteredItems,
-      sortDirection: !sortDirection,
+      sortDirection: sortDirection,
       sortBy: target.value,
     });
   }
