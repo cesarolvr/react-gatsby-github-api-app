@@ -42,7 +42,15 @@ const getUsers = async (filters: getUsersFilterType): Promise<object> => {
   const parsedResponse = await users.json();
 
   if (users.status !== 200) {
-    toast.error(parsedResponse.message);
+    toast.error(parsedResponse.message, {
+      position: "top-center",
+      autoClose: false,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   }
 
   const items = [...parsedResponse.items];

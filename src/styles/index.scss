@@ -15,3 +15,16 @@ body {
   align-items: center;
   padding: 50px;
 }
+
+.Toastify__toast.Toastify__toast {
+  box-shadow: 5px 5px 0px #311071;
+
+  .Toastify__toast-icon svg {
+    fill: #FF1700
+  }
+}
+
+:root:root {
+  --toastify-color-light: #9900f0;
+  --toastify-text-color-light: white;
+}

@@ -7,7 +7,7 @@ import { Searching } from "src/contexts";
 import services from "src/services";
 
 // Styles
-import './index.scss'
+import "./index.scss";
 
 const Pagination = () => {
   const searching = useContext(Searching.Context);
@@ -19,15 +19,25 @@ const Pagination = () => {
       name,
       page: newPage,
     });
-    setSearching({ page: newPage, loading: false, dirty: true, ...newSearching });
+    setSearching({
+      page: newPage,
+      loading: false,
+      dirty: true,
+      ...newSearching,
+    });
   };
 
   return (
     <div className="pagination">
-      <button disabled={page < 2} onClick={() => navigate(page - 1)}>
+      <button
+        className="button"
+        disabled={page < 2}
+        onClick={() => navigate(page - 1)}
+      >
         voltar
       </button>
       <button
+        className="button"
         onClick={() => navigate(page + 1)}
         disabled={page === total_count}
       >

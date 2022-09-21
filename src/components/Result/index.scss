@@ -26,8 +26,13 @@
     justify-content: space-between;
     text-align: left;
     border-bottom: 1px solid #eee;
+    cursor: pointer;
 
-    &-header {
+    &:hover {
+      background-color: #eee;
+    }
+
+    &-header, &-header:hover {
       background: #4701cb;
       color: white;
 

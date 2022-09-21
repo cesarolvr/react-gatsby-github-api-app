@@ -16,6 +16,14 @@
     border-radius: 10px;
     margin-right: 5px;
     font-size: 18px;
+    
+    &:disabled {
+      cursor: not-allowed;
+    }
+  }
+
+  .select {
+    cursor: pointer;
   }
 
   .input {
@@ -29,5 +37,9 @@
     font-size: 20px;
     cursor: pointer;
     height: 100%;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
   }
 }
