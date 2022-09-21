@@ -1,1 +1,17 @@
-@import 'reset-css/sass/reset';
+@import "reset-css/sass/reset";
+@import "./typography.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #5800ff;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+}

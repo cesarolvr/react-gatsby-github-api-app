@@ -6,25 +6,31 @@ import { getQueryStringFromObject } from "src/utils";
 type getUsersFilterType = {
   name: string;
   page: number;
+  sortBy?: string;
+  sortDirection?: boolean;
 };
 
 type githubFilterType = {
   q: string;
   per_page: number;
   page: any;
-  sort?: string;
   order?: string;
 };
 
+type sortUsersType = {
+  items: Array<any>;
+  sortDirection: boolean;
+  sortBy: string;
+};
+
 const getUsers = async (filters: getUsersFilterType): Promise<object> => {
-  const { name, page } = filters;
+  const { name, page, sortBy, sortDirection } = filters;
 
   const filterToGithubAPI: githubFilterType = {
     q: `${name} in:login`,
     page,
     per_page: 9,
-    sort: "",
-    order: "desc",
+    order: sortDirection ? "asc" : "desc",
   };
 
   const queryString = getQueryStringFromObject(filterToGithubAPI);
@@ -39,10 +45,31 @@ const getUsers = async (filters: getUsersFilterType): Promise<object> => {
     toast.error(parsedResponse.message);
   }
 
-  return parsedResponse;
+  const items = [...parsedResponse.items];
+  const sorteredItemsByLogin: object[] = items.sort((current, next) =>
+    current.login.localeCompare(next.login),
+  );
+
+  return { ...parsedResponse, items: sorteredItemsByLogin };
 };
 
-export default { getUsers };
+const sortUsers = ({ items, sortDirection, sortBy }: sortUsersType) => {
+  const newItems = [...items];
+  const sorteredItems: object[] = newItems.sort((current, next) => {
+    const valueToCheck = current[sortBy];
+
+    if (sortDirection) {
+      return valueToCheck.localeCompare(next[sortBy]);
+    } else {
+      return next[sortBy].localeCompare(valueToCheck);
+    }
+  });
+  // console.log("sorteredItems", sorteredItems);
+
+  return sorteredItems;
+};
+
+export default { getUsers, sortUsers };
 
 // sort=followers|repositories|joined
 // order=desc|asc

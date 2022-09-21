@@ -1,0 +1,48 @@
+.results-list {
+  width: 400px;
+  max-width: 90vw;
+  margin: 0 auto;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: white;
+  border: 5px solid #742df9;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+
+    &-header {
+      background: #4701cb;
+      color: white;
+
+      .results-list__item-cell:first-of-type {
+        justify-content: center;
+      }
+    }
+
+    &-cell {
+      padding: 15px;
+      flex-shrink: 0;
+      text-align: left;
+      width: 100%;
+      display: flex;
+      align-items: center;
+
+      &:first-of-type {
+        width: 15%;
+        padding: 5px 15px;
+      }
+
+      &:nth-of-type(2) {
+        width: 55%;
+      }
+
+      &:last-of-type {
+        width: 30%;
+        padding-left: 5px;
+      }
+    }
+  }
+}

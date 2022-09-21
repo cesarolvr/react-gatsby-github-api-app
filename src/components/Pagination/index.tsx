@@ -6,6 +6,9 @@ import { Searching } from "src/contexts";
 // Services
 import services from "src/services";
 
+// Styles
+import './index.scss'
+
 const Pagination = () => {
   const searching = useContext(Searching.Context);
   const { page, total_count, name, setSearching } = searching;
@@ -20,7 +23,7 @@ const Pagination = () => {
   };
 
   return (
-    <div>
+    <div className="pagination">
       <button disabled={page < 2} onClick={() => navigate(page - 1)}>
         voltar
       </button>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-interface UsersContext {
+export interface UsersContext {
   avatar_url: string;
   events_url: string;
   followers_url: string;
@@ -32,6 +32,8 @@ type SearchingContext = {
   message?: string;
   dirty: boolean;
   loading: boolean;
+  sortDirection: boolean;
+  sortBy: string;
 };
 
 const initialState: SearchingContext = {
@@ -42,6 +44,8 @@ const initialState: SearchingContext = {
   setSearching: () => null,
   dirty: false,
   loading: false,
+  sortDirection: true,
+  sortBy: "login",
 };
 
 const Context = React.createContext<SearchingContext>(initialState);
