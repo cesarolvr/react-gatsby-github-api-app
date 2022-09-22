@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import type { HeadFC } from "gatsby";
+import { Helmet } from "react-helmet";
+// import type { HeadFC } from "gatsby";
 import classNames from "classnames";
 
 // Components
@@ -22,7 +23,17 @@ const Home = () => {
   }, 2000);
 
   const emojisInterval = () => {
-    const items = ["🐚 🌊", "🐠 🦑", "🦀 🦐", "🦈 🐟", "💧 🤿", "🧶 🩴", "🐊 🐡", "🏄🏽‍♂️ 🏊🏽‍♀️", "👍🏾"];
+    const items = [
+      "🐚 🌊",
+      "🐠 🦑",
+      "🦀 🦐",
+      "🦈 🐟",
+      "💧 🤿",
+      "🧶 🩴",
+      "🐊 🐡",
+      "🏄🏽‍♂️ 🏊🏽‍♀️",
+      "👍🏾",
+    ];
     let i = 0;
     (function loopIt(i) {
       setTimeout(function () {
@@ -42,17 +53,33 @@ const Home = () => {
     emojisInterval();
   }, []);
 
+  const { total_count } = searchingContext;
+
   return (
     <main className="main page-home">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          ⭐ {total_count ? `${total_count} users found` : `GITHUB USERS `} ⭐🐙
+        </title>
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐙</text></svg>"
+        />
+      </Helmet>
       <div
         className={classNames("loader", {
           "loader--finished": !isLoading,
         })}
+        title="loading"
       >
         <div className="content">{loadingText}</div>
       </div>
       <header className="header">
-        <a href="https://github.com/cesarolvr/cesar-oliveira-web">
+        <a
+          href="https://github.com/cesarolvr/cesar-oliveira-web"
+          target="_blank"
+        >
           🔗 source code here 🔗
         </a>
       </header>
@@ -65,9 +92,3 @@ const Home = () => {
 };
 
 export default Home;
-
-export const Head: HeadFC = () => (
-  <>
-    <title>⭐🐙⭐🐙 GITHUB USERS</title>
-  </>
-);

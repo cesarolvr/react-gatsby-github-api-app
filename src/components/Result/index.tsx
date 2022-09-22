@@ -51,7 +51,9 @@ const Result = () => {
                           </div>
                           <div className="results-list__item-cell">{login}</div>
                           <div className="results-list__item-cell">
-                            {type.toLowerCase()}
+                            {type.toLowerCase() === "organization"
+                              ? "org"
+                              : type.toLowerCase()}
                           </div>
                         </li>
                       );
