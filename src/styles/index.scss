@@ -3,7 +3,8 @@
 @import "./bootstrap/typography.scss";
 
 // Pages
-@import "./home.scss";
+@import "./pages/home.scss";
+@import "./pages/notfound.scss";
 
 * {
   box-sizing: border-box;
