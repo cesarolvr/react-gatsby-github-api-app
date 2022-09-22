@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "test": "jest && cypress run --headless",
+    "test:jest": "jest",
     "coverage": "jest --coverage"
   },
   "dependencies": {
