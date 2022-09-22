@@ -13,7 +13,7 @@ const Home = () => {
   const { total_count } = searchingContext;
 
   return (
-    <main className="main page-home">
+    <main className="main main--home">
       <Helmet>
         <meta charSet="utf-8" />
         <title>
@@ -25,7 +25,7 @@ const Home = () => {
         />
       </Helmet>
       <Loader />
-      <header className="header">
+      <header className="main__header">
         <a
           href="https://github.com/cesarolvr/cesar-oliveira-web"
           target="_blank"
@@ -33,8 +33,8 @@ const Home = () => {
           🔗 source code here 🔗
         </a>
       </header>
-      <h1 className="title">🐙 GitHub users ⭐</h1>
-      <p className="subtitle">search any user in GitHub's API</p>
+      <h1 className="main__title">🐙 GitHub users ⭐</h1>
+      <p className="main__subtitle">search any user in GitHub's API</p>
       <Search {...searchingContext} />
       <Result />
     </main>

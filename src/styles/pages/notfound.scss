@@ -1,19 +1,17 @@
-.main {
-  &.notfound-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.main--notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 
-    .title {
-      font-size: 100px;
-      font-family: "Press Start 2P";
-      color: #72ffff;
-    }
+  .main__title {
+    font-size: 100px;
+    font-family: "Press Start 2P";
+    color: #72ffff;
+  }
 
-    .link {
-      margin: 50px 0;
-      color: white;
-    }
+  .main__link {
+    margin: 50px 0;
+    color: white;
   }
 }

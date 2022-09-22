@@ -1,5 +1,5 @@
-.page-home {
-  .title {
+.main--home {
+  .main__title {
     font-family: "Press Start 2P";
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -12,24 +12,24 @@
     top: 31px;
   }
 
-  .subtitle {
+  .main__subtitle {
     margin-bottom: 20px;
     color: #bd9ef6;
     max-width: 80vw;
     text-align: center;
   }
-}
 
-.header {
-  position: fixed;
-  top: 0;
-  background-color: #72ffff;
-  padding: 10px;
-  width: 100vw;
-  text-align: center;
-  z-index: 10;
+  .main__header {
+    position: fixed;
+    top: 0;
+    background-color: #72ffff;
+    padding: 10px;
+    width: 100vw;
+    text-align: center;
+    z-index: 10;
 
-  a {
-    color: #4701cb;
+    a {
+      color: #4701cb;
+    }
   }
 }
