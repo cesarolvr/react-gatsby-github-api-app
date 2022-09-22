@@ -1,34 +1,36 @@
 import React from "react";
-import { screen, render, fireEvent, cleanup } from "@testing-library/react";
+import { screen, render } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { act } from "react-dom/test-utils";
 
 // Components
 import Search from "./index";
 
-describe("Testing form validation", () => {
-  afterEach(cleanup);
-  
-  test("Verifying disabled button", () => {
+describe("Testing search validation", () => {
+  test("Verifying disabled button", async () => {
     render(<Search />);
-    const button: any = screen.getByTestId("submit");
+
+    const button: HTMLElement = screen.getByTestId("submit");
     expect(button).toBeDisabled();
   });
 
   test("Verifying enable button", async () => {
     render(<Search />);
-    const button: any = screen.getByTestId("submit");
-    const input = screen.getByTestId("search");
-    
-    await act(() => {
-      fireEvent.change(input, { target: { value: "cesar" } });
-    });
-    
+
+    const button: HTMLElement = screen.getByTestId("submit");
+    const input: HTMLElement = screen.getByTestId("search");
+
+    await userEvent.type(input, "cesar");
+
     expect(button).not.toBeDisabled();
   });
 
-  test("Verifying disabled type", () => {
+  test("Verifying disabled type and order", async () => {
     render(<Search />);
-    const button: any = screen.getByTestId("type");
-    expect(button).toBeDisabled();
+
+    const type: HTMLElement = screen.getByTestId("type");
+    const order: HTMLElement = screen.getByTestId("order");
+    expect(type).toBeDisabled();
+    expect(order).toBeDisabled();
   });
 });

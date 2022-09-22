@@ -18,16 +18,16 @@ type SearchData = {
 import "./index.scss";
 
 const Search = () => {
+  const { setSearching, page, sortDirection, sortBy, name, items } = useContext(
+    Searching.Context,
+  );
+
   const { handleSubmit, register, formState } = useForm<SearchData>({
     mode: "onChange",
     defaultValues: {
-      name: "",
+      name,
     },
   });
-
-  const { setSearching, page, sortDirection, sortBy, items } = useContext(
-    Searching.Context,
-  );
 
   const onSubmit: SubmitHandler<SearchData> = async (
     data: SearchData,
@@ -52,9 +52,9 @@ const Search = () => {
   };
 
   const changeSortBy = (e: ChangeEvent): void => {
-    e.preventDefault()
-    const target = e.target as HTMLInputElement
-    
+    e.preventDefault();
+    const target = e.target as HTMLInputElement;
+
     const sorteredItems: object = services.sortUsers({
       items,
       sortDirection: sortDirection,
@@ -66,10 +66,9 @@ const Search = () => {
       sortDirection: sortDirection,
       sortBy: target.value,
     });
-  }
+  };
 
   const changeSort = (): void => {
-  
     const sorteredItems: object = services.sortUsers({
       items,
       sortDirection: !sortDirection,
@@ -95,7 +94,12 @@ const Search = () => {
           className="input"
           data-testid="search"
         />
-        <button className="button" data-testid="submit" type="submit" disabled={!formState.isValid}>
+        <button
+          className="button"
+          data-testid="submit"
+          type="submit"
+          disabled={!formState.isValid}
+        >
           {!formState.isValid ? `🔒` : `🔍`}
         </button>
       </div>

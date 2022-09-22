@@ -48,7 +48,8 @@ const initialState: SearchingContext = {
   sortBy: "login",
 };
 
-const Context = React.createContext<SearchingContext>(initialState);
+const Context: React.Context<SearchingContext> =
+  React.createContext<SearchingContext>(initialState);
 
 const Provider = ({ children }: React.PropsWithChildren) => {
   const [searching, set] = useState(initialState);
