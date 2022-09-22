@@ -13,7 +13,7 @@
   cursor: progress;
   transition: transform 0.3s ease;
 
-  .content {
+  &__content {
     z-index: 13;
     transition: opacity 0.3s ease;
   }
@@ -31,7 +31,7 @@
   }
 
   &--finished {
-    .content {
+    .loader__content {
       opacity: 0;
     }
 

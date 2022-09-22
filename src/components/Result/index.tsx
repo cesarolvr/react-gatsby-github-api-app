@@ -17,14 +17,14 @@ const Result = () => {
     <div className="results">
       <If
         condition={loading}
-        renderIf={<div className="feedback">⌛ loading...</div>}
+        renderIf={<div className="results__feedback">⌛ loading...</div>}
         renderElse={
           <>
             <If
               condition={items && items.length > 0}
               renderIf={
                 <>
-                  <div className="results-info">
+                  <div className="results__info">
                     <div className="holder">
                       <span>{total_count}</span> users found
                     </div>
@@ -32,25 +32,25 @@ const Result = () => {
                       page <span>{page}</span>
                     </div>
                   </div>
-                  <ul className="results-list">
-                    <li className="results-list__item results-list__item-header">
-                      <div className="results-list__item-cell">📷</div>
-                      <div className="results-list__item-cell">login</div>
-                      <div className="results-list__item-cell">type</div>
+                  <ul className="results__list">
+                    <li className="results__list-item results__list-item--header">
+                      <div className="results__list-item-cell">📷</div>
+                      <div className="results__list-item-cell">login</div>
+                      <div className="results__list-item-cell">type</div>
                     </li>
 
                     {items.map(({ login, id, avatar_url, type }) => {
                       return (
-                        <li className="results-list__item" key={id}>
-                          <div className="results-list__item-cell">
+                        <li className="results__list-item" key={id}>
+                          <div className="results__list-item-cell">
                             <img
                               src={avatar_url}
                               alt=""
-                              className="results-list__item-cell-thumb"
+                              className="results__list-item-cell-thumb"
                             />
                           </div>
-                          <div className="results-list__item-cell">{login}</div>
-                          <div className="results-list__item-cell">
+                          <div className="results__list-item-cell">{login}</div>
+                          <div className="results__list-item-cell">
                             {type.toLowerCase() === "organization"
                               ? "org"
                               : type.toLowerCase()}

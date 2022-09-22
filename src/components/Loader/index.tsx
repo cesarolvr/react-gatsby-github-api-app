@@ -8,11 +8,11 @@ const Loader = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [loadingText, setLoadingText] = useState("🐙 ⭐");
 
-  const animationTimeout = setTimeout(() => {
+  const animationTimeout = setTimeout((): void => {
     setIsLoading(false);
   }, 600);
 
-  const emojisInterval = () => {
+  const emojisInterval = (): void => {
     const items = [
       "🐚 🌊",
       "🐠 🦑",
@@ -50,7 +50,7 @@ const Loader = () => {
       })}
       title="loading"
     >
-      <div className="content">{loadingText}</div>
+      <div className="loader__content">{loadingText}</div>
     </div>
   );
 };

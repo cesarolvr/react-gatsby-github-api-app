@@ -1,48 +1,59 @@
-.results-info {
-  margin: 0 auto 25px auto;
-  text-align: left;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.results {
+  &__feedback {
+    color: white;
+    padding: 50px;
 
-  span {
-    background-color: #300287;
-    padding: 0 5px;
-  }
-}
-
-.results-list {
-  width: 400px;
-  max-width: 90vw;
-  margin: 0 auto;
-  border-radius: 15px;
-  overflow: hidden;
-  background-color: white;
-  border: 5px solid #742df9;
-
-  &__item {
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #eee;
+    strong {
+      background-color: #300287;
+      padding: 0 5px;
     }
+  }
 
-    &-header,
-    &-header:hover {
-      background: #4701cb;
-      color: white;
+  &__info {
+    margin: 0 auto 25px auto;
+    text-align: left;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-      .results-list__item-cell:first-of-type {
-        justify-content: center;
+    span {
+      background-color: #300287;
+      padding: 0 5px;
+    }
+  }
+
+  &__list {
+    width: 400px;
+    max-width: 90vw;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: white;
+    border: 5px solid #742df9;
+
+    &-item {
+      display: flex;
+      justify-content: space-between;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #eee;
+      }
+
+      &--header,
+      &--header:hover {
+        background: #4701cb;
+        color: white;
+        .results__list-item-cell:first-of-type {
+          justify-content: center;
+        }
       }
     }
 
-    &-cell {
+    &-item-cell {
       padding: 15px;
       flex-shrink: 0;
       text-align: left;
@@ -82,15 +93,5 @@
         }
       }
     }
-  }
-}
-
-.feedback {
-  color: white;
-  padding: 50px;
-
-  strong {
-    background-color: #300287;
-    padding: 0 5px;
   }
 }
