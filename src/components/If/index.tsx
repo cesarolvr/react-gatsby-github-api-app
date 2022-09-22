@@ -1,5 +1,4 @@
 import React from "react";
-
 interface IfProps {
   condition: boolean;
   renderIf: React.ReactElement;

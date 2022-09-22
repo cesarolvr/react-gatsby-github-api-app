@@ -93,8 +93,9 @@ const Search = () => {
           placeholder="search"
           type="text"
           className="input"
+          data-testid="search"
         />
-        <button className="button" type="submit" disabled={!formState.isValid}>
+        <button className="button" data-testid="submit" type="submit" disabled={!formState.isValid}>
           {!formState.isValid ? `🔒` : `🔍`}
         </button>
       </div>
