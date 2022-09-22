@@ -82,7 +82,7 @@ const Search = (props: SearchingContext) => {
 
   return (
     <form className="search" onSubmit={handleSubmit(onSubmit)}>
-      <div className="search-control">
+      <div className="search__control">
         <input
           {...register("name", {
             required: true,
@@ -90,11 +90,11 @@ const Search = (props: SearchingContext) => {
           })}
           placeholder="search"
           type="text"
-          className="input"
+          className="search__input"
           data-testid="search"
         />
         <button
-          className="button"
+          className="search__button"
           data-testid="submit"
           type="submit"
           disabled={!formState.isValid}
@@ -102,9 +102,9 @@ const Search = (props: SearchingContext) => {
           {!formState.isValid ? `🔒` : `🔍`}
         </button>
       </div>
-      <div className="sort">
+      <div className="search__sort">
         <select
-          className="select"
+          className="search__select"
           disabled={!(items?.length > 0)}
           onChange={changeSortBy}
           data-testid="type"
@@ -113,7 +113,7 @@ const Search = (props: SearchingContext) => {
           <option value="type">type</option>
         </select>
         <button
-          className="button"
+          className="search__button"
           onClick={() => changeSort()}
           type="button"
           data-testid="order"
