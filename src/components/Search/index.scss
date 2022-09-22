@@ -4,7 +4,14 @@
   max-width: 90vw;
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-direction: column;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px 0 40px 0;
+  }
 
   &-control {
     display: flex;
@@ -18,7 +25,7 @@
     border-radius: 10px;
     margin-right: 5px;
     font-size: 18px;
-    
+
     &:disabled {
       cursor: not-allowed;
     }
@@ -26,22 +33,44 @@
 
   .select {
     cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 0px;
+    }
   }
 
   .input {
-    width: 150px;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media only screen and (min-width: 768px) {
+      width: 150px;
+      margin-bottom: 0px;
+    }
   }
 
   .button {
     border-radius: 10px;
+    margin-bottom: 10px;
     padding: 5px 13px;
     background-color: #671bf9;
     font-size: 20px;
     cursor: pointer;
     height: 100%;
 
+    @media only screen and (min-width: 768px) {
+      margin-bottom: 0px;
+    }
+
     &:disabled {
       cursor: not-allowed;
     }
+  }
+
+  .sort {
+    display: flex;
+    align-items: flex-start;
   }
 }
