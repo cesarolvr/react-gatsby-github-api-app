@@ -14,14 +14,15 @@ const Home = () => {
   const searchingContext = useContext(Searching.Context);
   return (
     <main className="main page-home">
-      <h1 className="title">🐙 GitHub users ⭐</h1>
-      <Search {...searchingContext} />
-      <Result />
-      <footer className="footer">
+      <header className="header">
         <a href="https://github.com/cesarolvr/cesar-oliveira-web">
           🔗 source code here 🔗
         </a>
-      </footer>
+      </header>
+      <h1 className="title">🐙 GitHub users ⭐</h1>
+      <p className="subtitle">just type something...</p>
+      <Search {...searchingContext} />
+      <Result />
     </main>
   );
 };

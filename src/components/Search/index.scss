@@ -1,8 +1,10 @@
 .search {
   width: 400px;
   margin: 30px;
+  max-width: 90vw;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   &-control {
     display: flex;
