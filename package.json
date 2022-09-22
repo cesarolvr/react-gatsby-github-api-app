@@ -18,6 +18,7 @@
     "coverage": "jest --coverage"
   },
   "dependencies": {
+    "classnames": "^2.3.2",
     "gatsby": "^4.23.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-sass": "^5.23.0",
