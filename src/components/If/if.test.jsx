@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 // Component
 import If from "./index";
@@ -13,7 +13,7 @@ describe("Testing if <If /> shows the right child", () => {
       />,
     );
 
-    expect(render.getByText(/True condition/i)).toBeInTheDocument();
+    expect(screen.getByText(/True condition/i)).toBeInTheDocument();
   });
 
   test("it should renders false", () => {
@@ -25,6 +25,6 @@ describe("Testing if <If /> shows the right child", () => {
       />,
     );
 
-    expect(render.getByText(/Falsy condition/i)).toBeInTheDocument();
+    expect(screen.getByText(/Falsy condition/i)).toBeInTheDocument();
   });
 });

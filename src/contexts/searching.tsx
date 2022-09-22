@@ -22,7 +22,7 @@ export interface UsersContext {
   url: string;
 }
 
-type SearchingContext = {
+export type SearchingContext = {
   name: string;
   items: UsersContext[] | [];
   page: number;

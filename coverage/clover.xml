@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663809353335" clover="3.2.0">
-  <project timestamp="1663809353335" name="All files">
+<coverage generated="1663815661740" clover="3.2.0">
+  <project timestamp="1663815661740" name="All files">
     <metrics statements="64" coveredstatements="32" conditionals="18" coveredconditionals="10" methods="19" coveredmethods="7" elements="101" coveredelements="49" complexity="0" loc="64" ncloc="64" packages="6" files="7" classes="7"/>
     <package name="components.If">
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -31,23 +31,23 @@
       <file name="index.tsx" path="/Users/cfaber/Sites/cesar-oliveira-web/src/components/Search/index.tsx">
         <metrics statements="18" coveredstatements="7" conditionals="8" coveredconditionals="4" methods="5" coveredmethods="1"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="4" type="stmt"/>
-        <line num="28" count="4" type="stmt"/>
-        <line num="32" count="4" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+        <line num="23" count="5" type="stmt"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="45" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="54" count="4" type="stmt"/>
-        <line num="55" count="0" type="stmt"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="52" count="5" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
         <line num="56" count="0" type="stmt"/>
-        <line num="58" count="0" type="stmt"/>
-        <line num="64" count="0" type="stmt"/>
-        <line num="71" count="4" type="stmt"/>
-        <line num="73" count="0" type="stmt"/>
-        <line num="79" count="0" type="stmt"/>
-        <line num="85" count="4" type="stmt"/>
-        <line num="114" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="69" count="5" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
+        <line num="82" count="5" type="stmt"/>
+        <line num="116" count="0" type="stmt"/>
       </file>
     </package>
     <package name="contexts">
@@ -57,14 +57,14 @@
       </file>
       <file name="searching.tsx" path="/Users/cfaber/Sites/cesar-oliveira-web/src/contexts/searching.tsx">
         <metrics statements="8" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="39" count="2" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
         <line num="44" count="0" type="stmt"/>
-        <line num="51" count="2" type="stmt"/>
-        <line num="53" count="2" type="stmt"/>
-        <line num="54" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
         <line num="57" count="0" type="stmt"/>
-        <line num="60" count="0" type="stmt"/>
+        <line num="58" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
       </file>
     </package>
     <package name="services">

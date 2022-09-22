@@ -1,8 +1,8 @@
-import React, { ChangeEvent, useContext } from "react";
+import React, { ChangeEvent } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 
-// Contexts
-import { Searching } from "src/contexts";
+// Types
+import { SearchingContext } from "src/contexts/searching";
 
 // Services
 import services from "src/services";
@@ -17,11 +17,9 @@ type SearchData = {
 // Styles
 import "./index.scss";
 
-const Search = () => {
-  const { setSearching, page, sortDirection, sortBy, name, items } = useContext(
-    Searching.Context,
-  );
-
+const Search = (props: SearchingContext) => {
+  const { setSearching, page, sortDirection, sortBy, name, items } = props
+  
   const { handleSubmit, register, formState } = useForm<SearchData>({
     mode: "onChange",
     defaultValues: {
@@ -106,7 +104,7 @@ const Search = () => {
       <div className="sort">
         <select
           className="select"
-          disabled={!(items.length > 0)}
+          disabled={!(items?.length > 0)}
           onChange={changeSortBy}
           data-testid="type"
         >
@@ -118,7 +116,7 @@ const Search = () => {
           onClick={() => changeSort()}
           type="button"
           data-testid="order"
-          disabled={!(items.length > 0)}
+          disabled={!(items?.length > 0)}
           title={sortDirection ? "sort ascending" : "sort descending"}
         >
           {sortDirection ? `⬆️` : `⬇️`}
