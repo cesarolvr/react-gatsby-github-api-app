@@ -17,15 +17,15 @@ const searchProps = {
   sortBy: "login",
 };
 
-describe("Testing search validation", () => {
-  test("Verifying disabled button", async () => {
+describe("Checking searching mechanism", () => {
+  test("Submit button should be blocked", async () => {
     render(<Search {...searchProps} />);
 
     const button: HTMLElement = screen.getByTestId("submit");
     expect(button).toBeDisabled();
   });
 
-  test("Verifying enable button", async () => {
+  test("Submit button should be enabled after filling some value in search field", async () => {
     render(<Search {...searchProps} />);
 
     const button: HTMLElement = screen.getByTestId("submit");
@@ -36,7 +36,7 @@ describe("Testing search validation", () => {
     expect(button).not.toBeDisabled();
   });
 
-  test("Verifying disabled type and order", async () => {
+  test("Sort options should be blocked in first load", async () => {
     render(<Search {...searchProps} />);
 
     const type: HTMLElement = screen.getByTestId("type");
@@ -46,11 +46,13 @@ describe("Testing search validation", () => {
   });
 });
 
-test("Testing rendering of search input", async () => {
-  render(<Search {...searchProps} name="cesar" />);
+describe("Checking props rendering in search's field", () => {
+  test("Should render provided value in search input", async () => {
+    render(<Search {...searchProps} name="cesar" />);
 
-  waitFor(async () => {
-    const input: any = await screen.findByTestId("search");
-    expect(input.value).toBe("cesar");
+    waitFor(async () => {
+      const input: any = await screen.findByTestId("search");
+      expect(input.value).toBe("cesar");
+    });
   });
 });
