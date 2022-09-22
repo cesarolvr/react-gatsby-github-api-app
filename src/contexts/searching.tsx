@@ -26,7 +26,7 @@ export type SearchingContext = {
   name: string;
   items: UsersContext[] | [];
   page: number;
-  total_count: number | null;
+  total_count: number;
   setSearching: Function;
   documentation_url?: string;
   message?: string;
@@ -40,7 +40,7 @@ const initialState: SearchingContext = {
   name: "",
   items: [],
   page: 1,
-  total_count: null,
+  total_count: 0,
   setSearching: () => null,
   dirty: false,
   loading: false,

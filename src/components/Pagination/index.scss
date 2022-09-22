@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
 
+  &--onlyprev{ 
+    justify-content: center;
+  }
+
   .button {
     padding: 12px;
     border-radius: 10px;

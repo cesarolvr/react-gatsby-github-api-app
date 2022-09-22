@@ -35,7 +35,7 @@ const Search = (props: SearchingContext) => {
     setSearching({ loading: true });
     const newSearching: object = await services.getUsers({
       name,
-      page,
+      page: 1,
       sortDirection,
       sortBy,
     });
@@ -45,6 +45,7 @@ const Search = (props: SearchingContext) => {
         name,
         loading: false,
         dirty: true,
+        page: 1,
         ...newSearching,
       });
   };

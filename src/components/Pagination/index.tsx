@@ -9,7 +9,15 @@ import services from "src/services";
 // Styles
 import "./index.scss";
 
-const Pagination = () => {
+type PaginationType = {
+  nextText?: string;
+  prevText?: string;
+};
+
+const Pagination = ({
+  nextText = "next",
+  prevText = "prev",
+}: PaginationType) => {
   const searching = useContext(Searching.Context);
   const { page, total_count, name, setSearching } = searching;
 
@@ -19,7 +27,7 @@ const Pagination = () => {
       name,
       page: newPage,
     });
-    
+
     setSearching({
       page: newPage,
       loading: false,
@@ -35,14 +43,14 @@ const Pagination = () => {
         disabled={page < 2}
         onClick={() => navigate(page - 1)}
       >
-        prev
+        {prevText}
       </button>
       <button
         className="button"
         onClick={() => navigate(page + 1)}
-        disabled={page === total_count}
+        disabled={searching.items.length === total_count}
       >
-        next
+        {nextText}
       </button>
     </div>
   );
