@@ -9,9 +9,6 @@ import { Search, Result } from "src/components";
 // Contexts
 import { Searching } from "src/contexts";
 
-// Styles
-import "./index.scss";
-
 const Home = () => {
   const searchingContext = useContext(Searching.Context);
 

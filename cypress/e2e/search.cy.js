@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 beforeEach(() => {
-  cy.visit("http://localhost:9000/");
+  cy.visit("http://localhost:8000/");
 });
 
 it("focus on search field", () => {

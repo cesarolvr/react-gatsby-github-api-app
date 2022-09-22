@@ -1,5 +1,9 @@
+// Bootstrap
 @import "reset-css/sass/reset";
-@import "./typography.scss";
+@import "./bootstrap/typography.scss";
+
+// Pages
+@import "./home.scss";
 
 * {
   box-sizing: border-box;

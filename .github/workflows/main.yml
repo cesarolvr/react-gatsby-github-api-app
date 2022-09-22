@@ -35,7 +35,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v4.2.0
         with:
-          build: yarn run build
-          start: yarn serve
-          wait-on: "http://localhost:9000"
+          start: yarn start
+          wait-on: "http://localhost:8000"
           headless: true
