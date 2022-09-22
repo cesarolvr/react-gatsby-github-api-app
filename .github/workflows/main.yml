@@ -19,19 +19,23 @@ jobs:
       - name: Run Jest
         run: yarn test
   Cypress:
-    cypress-run:
-      runs-on: ubuntu-latest
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-        - name: Install dependencies
-          run: yarn install
+      - name: Install node
+        uses: actions/setup-node@v2
+        with:
+          node:version: "14"
 
-        - name: Cypress run
-          uses: cypress-io/github-action@v4.2.0
-          with:
-            build: yarn run build
-            start: yarn serve
-            wait-on: "http://localhost:9000"
-            headless: true
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          build: yarn run build
+          start: yarn serve
+          wait-on: "http://localhost:9000"
+          headless: true
