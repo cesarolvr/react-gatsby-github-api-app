@@ -1,11 +1,10 @@
 /// <reference types="cypress" />
 
-describe("test", () => {
-  beforeEach(() => {
-    cy.visit("http://localhost:8000/");
-  });
+beforeEach(() => {
+  cy.visit("http://localhost:8000/");
+});
 
-  it("sub task", () => {
-    expect(true).to.equal(true);
-  });
+it("focus on search field", () => {
+  cy.findByTestId("search").focus();
+  expect(true).to.equal(true);
 });

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663815661740" clover="3.2.0">
-  <project timestamp="1663815661740" name="All files">
-    <metrics statements="64" coveredstatements="32" conditionals="18" coveredconditionals="10" methods="19" coveredmethods="7" elements="101" coveredelements="49" complexity="0" loc="64" ncloc="64" packages="6" files="7" classes="7"/>
+<coverage generated="1663882611277" clover="3.2.0">
+  <project timestamp="1663882611277" name="All files">
+    <metrics statements="64" coveredstatements="32" conditionals="20" coveredconditionals="12" methods="19" coveredmethods="7" elements="103" coveredelements="51" complexity="0" loc="64" ncloc="64" packages="6" files="7" classes="7"/>
     <package name="components.If">
       <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="index.tsx" path="/Users/cfaber/Sites/cesar-oliveira-web/src/components/If/index.tsx">
@@ -11,19 +11,19 @@
       </file>
     </package>
     <package name="components.Pagination">
-      <metrics statements="10" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
+      <metrics statements="10" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="1"/>
       <file name="index.tsx" path="/Users/cfaber/Sites/cesar-oliveira-web/src/components/Pagination/index.tsx">
-        <metrics statements="10" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="1"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="0" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="1"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
       </file>
     </package>
     <package name="components.Search">
@@ -38,16 +38,16 @@
         <line num="35" count="0" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="43" count="0" type="cond" truecount="0" falsecount="2"/>
-        <line num="52" count="5" type="stmt"/>
-        <line num="53" count="0" type="stmt"/>
+        <line num="53" count="5" type="stmt"/>
         <line num="54" count="0" type="stmt"/>
-        <line num="56" count="0" type="stmt"/>
-        <line num="62" count="0" type="stmt"/>
-        <line num="69" count="5" type="stmt"/>
-        <line num="70" count="0" type="stmt"/>
-        <line num="76" count="0" type="stmt"/>
-        <line num="82" count="5" type="stmt"/>
-        <line num="116" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="57" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+        <line num="70" count="5" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="77" count="0" type="stmt"/>
+        <line num="83" count="5" type="stmt"/>
+        <line num="117" count="0" type="stmt"/>
       </file>
     </package>
     <package name="contexts">
