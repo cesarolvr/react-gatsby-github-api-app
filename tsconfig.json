@@ -5,7 +5,7 @@
     "./gatsby-config.ts",
     "./src/tests/*",
     "./plugins/**/*",
-    "gatsby-types.d.ts",
+    "gatsby-types.d.ts"
   ],
   "compilerOptions": {
     "target": "esnext",
@@ -23,5 +23,11 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "types": ["node", "jest", "@testing-library/jest-dom"]
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom",
+    "cypress",
+    "@testing-library/cypress"
+  ]
 }
