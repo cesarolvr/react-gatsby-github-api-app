@@ -104,6 +104,7 @@ const Search = () => {
           className="select"
           disabled={!(items.length > 0)}
           onChange={changeSortBy}
+          data-testid="type"
         >
           <option value="login">login</option>
           <option value="type">type</option>
@@ -112,6 +113,7 @@ const Search = () => {
           className="button"
           onClick={() => changeSort()}
           type="button"
+          data-testid="order"
           disabled={!(items.length > 0)}
           title={sortDirection ? "sort ascending" : "sort descending"}
         >

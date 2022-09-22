@@ -6,13 +6,13 @@ import { act } from "react-dom/test-utils";
 import Search from "./index";
 
 describe("Testing form validation", () => {
+  afterEach(cleanup);
+  
   test("Verifying disabled button", () => {
     render(<Search />);
     const button: any = screen.getByTestId("submit");
     expect(button).toBeDisabled();
   });
-
-  afterEach(cleanup);
 
   test("Verifying enable button", async () => {
     render(<Search />);
@@ -24,5 +24,11 @@ describe("Testing form validation", () => {
     });
     
     expect(button).not.toBeDisabled();
+  });
+
+  test("Verifying disabled type", () => {
+    render(<Search />);
+    const button: any = screen.getByTestId("type");
+    expect(button).toBeDisabled();
   });
 });
