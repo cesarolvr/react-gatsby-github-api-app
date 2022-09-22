@@ -1,36 +1,10 @@
 // Bootstrap
 @import "reset-css/sass/reset";
+@import "./bootstrap/tokens.scss";
+@import "./bootstrap/common.scss";
 @import "./bootstrap/typography.scss";
+@import "./bootstrap/overwrites.scss";
 
 // Pages
 @import "./pages/home.scss";
 @import "./pages/notfound.scss";
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background: #5800ff;
-}
-
-.main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 100px 0;
-}
-
-.Toastify__toast.Toastify__toast {
-  box-shadow: 5px 5px 0px #311071;
-
-  .Toastify__toast-icon svg {
-    fill: #FF1700
-  }
-}
-
-:root:root {
-  --toastify-color-light: #9900f0;
-  --toastify-text-color-light: white;
-}
