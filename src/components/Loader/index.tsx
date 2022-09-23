@@ -4,16 +4,19 @@ import classNames from "classnames";
 // Styles
 import "./index.scss";
 
-const Loader = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [loadingText, setLoadingText] = useState("🐙 ⭐");
+const Loader = (): React.ReactElement => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [loadingText, setLoadingText] = useState<string>("🐙 ⭐");
 
-  const animationTimeout = setTimeout((): void => {
-    setIsLoading(false);
-  }, 600);
+  const animationTimeout: ReturnType<typeof setTimeout> = setTimeout(
+    (): void => {
+      setIsLoading(false);
+    },
+    600,
+  );
 
   const emojisInterval = (): void => {
-    const items = [
+    const items: Array<string> = [
       "🐚 🌊",
       "🐠 🦑",
       "🦀 🦐",
@@ -24,9 +27,9 @@ const Loader = () => {
       "🏄🏽‍♂️ 🏊🏽‍♀️",
       "👍🏾",
     ];
-    let i = 0;
-    (function loopIt(i) {
-      setTimeout(function () {
+    let i: number = 0;
+    (function loopIt(i): void {
+      setTimeout(function (): void {
         setLoadingText(items[i]);
         if (i < items.length - 1) loopIt(i + 1);
       }, 300);
@@ -34,12 +37,12 @@ const Loader = () => {
   };
 
   useEffect(() => {
-    return () => {
+    return (): void => {
       clearTimeout(animationTimeout);
     };
   });
 
-  useEffect(() => {
+  useEffect((): void => {
     emojisInterval();
   }, []);
 

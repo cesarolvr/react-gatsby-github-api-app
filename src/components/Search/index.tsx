@@ -9,7 +9,7 @@ import "./index.scss";
 // Hooks
 import useSearch from "./useSearch";
 
-const Search = (props: SearchingContext) => {
+const Search = (props: SearchingContext): React.ReactElement => {
   const { changeSortBy, changeSort, onSubmit, searchForm } = useSearch(props);
 
   const { handleSubmit, register, formState } = searchForm;

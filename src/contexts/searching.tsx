@@ -51,7 +51,9 @@ const initialState: SearchingContext = {
 const Context: React.Context<SearchingContext> =
   React.createContext<SearchingContext>(initialState);
 
-const Provider = ({ children }: React.PropsWithChildren) => {
+const Provider = ({
+  children,
+}: React.PropsWithChildren): React.ReactElement => {
   const [searching, set] = useState(initialState);
 
   const setSearching = (newSearching: object) => {

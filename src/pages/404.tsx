@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-const NotFound = () => {
+const NotFound = (): React.ReactElement => {
   return (
     <main className="main main--notfound">
       <Helmet>

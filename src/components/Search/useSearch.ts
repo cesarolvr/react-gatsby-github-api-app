@@ -31,7 +31,7 @@ const useSearch = ({
   const onSubmit: SubmitHandler<SearchData> = async (
     data: SearchData,
   ): Promise<void> => {
-    const { name } = data;
+    const { name }: { name: string } = data;
 
     setSearching({ loading: true });
     const newSearching: object = await services.getUsers({

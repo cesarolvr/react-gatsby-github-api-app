@@ -3,14 +3,17 @@ import React, { useContext } from "react";
 // Contexts
 import { Searching } from "src/contexts";
 
+// Types
+import { SearchingContext } from "src/contexts/searching";
+
 // Components
 import { If, Pagination } from "src/components";
 
 // Styles
 import "./index.scss";
 
-const Result = () => {
-  const searching = useContext(Searching.Context);
+const Result = (): React.ReactElement => {
+  const searching: SearchingContext = useContext(Searching.Context);
   const { items, dirty, loading, name, total_count, page } = searching;
 
   return (

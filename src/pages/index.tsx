@@ -7,10 +7,10 @@ import { Search, Result, Loader } from "src/components";
 // Contexts
 import { Searching } from "src/contexts";
 
-const Home = () => {
+const Home = (): React.ReactElement => {
   const searchingContext = useContext(Searching.Context);
 
-  const { total_count } = searchingContext;
+  const { total_count }: { total_count: number } = searchingContext;
 
   return (
     <main className="main main--home">

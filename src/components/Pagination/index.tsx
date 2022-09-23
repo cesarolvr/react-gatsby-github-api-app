@@ -3,6 +3,9 @@ import React, { useContext } from "react";
 // Contexts
 import { Searching } from "src/contexts";
 
+// Types
+import { SearchingContext } from "src/contexts/searching";
+
 // Services
 import services from "src/services";
 
@@ -18,10 +21,10 @@ const Pagination = ({
   nextText = "next",
   prevText = "prev",
 }: PaginationType) => {
-  const searching = useContext(Searching.Context);
+  const searching: SearchingContext = useContext(Searching.Context);
   const { page, total_count, name, setSearching } = searching;
 
-  const navigate = async (newPage: number) => {
+  const navigate = async (newPage: number): Promise<void> => {
     setSearching({ loading: true });
     const newSearching = await services.getUsers({
       name,
