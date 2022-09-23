@@ -1,7 +1,16 @@
 .Toastify__toast.Toastify__toast {
   box-shadow: 5px 5px 0px #311071;
+  max-width: 80vw;
+  margin: auto;
+  bottom: 40px;
 
   .Toastify__toast-icon svg {
     fill: #ff1700;
+  }
+  
+  .Toastify__close-button svg {
+    
+    width: 20px;
+    height: 20px;
   }
 }
