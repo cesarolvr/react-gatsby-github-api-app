@@ -1,5 +1,4 @@
-import React, { ChangeEvent } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import React from "react";
 
 // Types
 import { SearchingContext } from "src/contexts/searching";
@@ -7,8 +6,13 @@ import { SearchingContext } from "src/contexts/searching";
 // Styles
 import "./index.scss";
 
+// Hooks
+import useSearch from "./useSearch";
+
 const Search = (props: SearchingContext) => {
-  const { setSearching, page, sortDirection, sortBy, name, items } = props
+  const { changeSortBy, changeSort, onSubmit, searchForm } = useSearch(props);
+
+  const { handleSubmit, register, formState } = searchForm;
 
   return (
     <form className="search" onSubmit={handleSubmit(onSubmit)}>
@@ -35,7 +39,7 @@ const Search = (props: SearchingContext) => {
       <div className="search__sort">
         <select
           className="search__select"
-          disabled={!(items?.length > 0)}
+          disabled={!(props.items?.length > 0)}
           onChange={changeSortBy}
           data-testid="type"
         >
@@ -47,10 +51,10 @@ const Search = (props: SearchingContext) => {
           onClick={() => changeSort()}
           type="button"
           data-testid="order"
-          disabled={!(items?.length > 0)}
-          title={sortDirection ? "sort ascending" : "sort descending"}
+          disabled={!(props?.items?.length > 0)}
+          title={props.sortDirection ? "sort ascending" : "sort descending"}
         >
-          {sortDirection ? `⬆️` : `⬇️`}
+          {props.sortDirection ? `⬆️` : `⬇️`}
         </button>
       </div>
     </form>
