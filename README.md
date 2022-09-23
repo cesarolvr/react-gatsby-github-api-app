@@ -1,54 +1,59 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
 
-## 🚀 Quick start
+# Technical test for Scalio
+This test consists of a page with 2 major components: one to search data in the Github API and another to render the result.
 
-1.  **Create a Gatsby site.**
+### Demo
+https://cesar-oliveira-web.vercel.app/
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+### My decisions
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+- **React** - Because it's interface library I have more knowledge/experience.
+- **Gatsby** - To generate static files and serve it as a SSG application. I choose this approach because it would be a simple page and I would like it to be fast.
+- **TypeScript** - To type the code.
+- **React Context** - To create a "store" and feed any component in application without cascade props manually.
+- **React Hooks** - To be more simple and create a stateless environment.
+- **SASS** - As a styles pre-processor.
+- **react-hook-form** - To abstract form states for me. I could do it manually, but RHF it's a lightweight and very simple library, so worth it.
+- **react-toastify** - To show the error message. Only because it's simple and pretty.
+- **react-helmet** - To do some interactions in the browser tab.
+- **Jest** - To run my tests pipeline and create some unit tests.
+- **Testing Library** - To have more possibilities when testing the UI.
+- **Cypress** - To create a E2E test
+- **GitHub Actions** - To run the tests automatically when updating main or opening new PR.
+- **Vercel** - To deploy and serve.
 
-2.  **Start developing.**
+### Getting started
 
-    Navigate into your new site’s directory and start it up.
+**Run:**
+```javascript
+yarn
+yarn start
+```
+This will start application in development mode.
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+**Build and serve:**
+```javascript
+yarn build
+yarn serve
+```
+This will generate static files and serve in a local server.
 
-3.  **Open the code and start customizing!**
+**Run the tests:**
+The tests pipeline will be triggered automatically when you push the branch `main` in GitHub. But it's also possible to run them locally.
 
-    Your site is now running at http://localhost:8000!
+*Unit and component tests:*
+```shellscript
+yarn test:jest
+```
+*E2E test:*
+```shellscript
+test:cypress
+```
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+***Extra**: Check the tests coverage:*
+```shellscript
+yarn coverage
+```
 
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+**How to deploy new version:**
+Just push in the branch `main`.
