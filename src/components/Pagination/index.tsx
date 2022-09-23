@@ -42,14 +42,14 @@ const Pagination = ({
   return (
     <div className="pagination">
       <button
-        className="pagination__button"
+        className="pagination__button pagination__button--prev"
         disabled={page < 2}
         onClick={() => navigate(page - 1)}
       >
         {prevText}
       </button>
       <button
-        className="pagination__button"
+        className="pagination__button pagination__button--next"
         onClick={() => navigate(page + 1)}
         disabled={searching.items.length === total_count}
       >

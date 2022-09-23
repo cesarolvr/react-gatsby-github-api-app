@@ -28,7 +28,7 @@ const Search = (props: SearchingContext): React.ReactElement => {
           data-testid="search"
         />
         <button
-          className="search__button"
+          className="search__button search__button--submit"
           data-testid="submit"
           type="submit"
           disabled={!formState.isValid}
@@ -47,7 +47,7 @@ const Search = (props: SearchingContext): React.ReactElement => {
           <option value="type">type</option>
         </select>
         <button
-          className="search__button"
+          className="search__button search__button--sort"
           onClick={() => changeSort()}
           type="button"
           data-testid="order"
