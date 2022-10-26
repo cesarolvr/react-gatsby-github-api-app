@@ -1,11 +1,11 @@
 
-# Technical test for Scalio
+## Just testing Github public API
 This test consists of a page with 2 major components: one to search data in the Github API and another to render the result.
 
 ### Demo
 https://cesar-oliveira-web.vercel.app/
 
-### My decisions
+### What was used
 
 - **React** - Because it's interface library I have more knowledge/experience.
 - **Gatsby** - To generate static files and serve it as a SSG application. I choose this approach because it would be a simple page and I would like it to be fast.
